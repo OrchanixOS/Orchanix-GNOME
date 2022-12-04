@@ -926,7 +926,6 @@ install -t /usr/share/licenses/gnome-shell-extension-fuzzy-app-search -Dm644 ext
 mkdir /usr/share/gnome-shell/extensions/favourites-in-appgrid@harshadgavali.gitlab.org; unzip favourites-in-appgridharshadgavali.gitlab.org.v2.shell-extension.zip -d /usr/share/gnome-shell/extensions/favourites-in-appgrid@harshadgavali.gitlab.org
 chmod 644 /usr/share/gnome-shell/extensions/favourites-in-appgrid@harshadgavali.gitlab.org/metadata.json
 install -t /usr/share/licenses/gnome-shell-extension-favourites-in-appgrid -Dm644 extra-package-licenses/LICENSE-gnome-shell-extension-favourites-in-appgrid.txt
-sed -e 's|"42"|"43"|' -i /usr/share/gnome-shell/extensions/favourites-in-appgrid@harshadgavali.gitlab.org/metadata.json
 # Set default wallpaper
 ln -sf xfce /usr/share/backgrounds/gnome
 # Set GNOME Static wallpapers
@@ -959,9 +958,6 @@ cat >> /etc/gtk-4.0/settings.ini << "END"
 [Settings]
 gtk-hint-font-metrics=1
 END
-# Set GDM background
-cp gdm-background.png /usr/share/gdm
-set-gdm-theme set -b /usr/share/gdm/gdm-background.png
 # Customise GNOME
 cat >> /usr/share/glib-2.0/schemas/10_gnome-shell.gschema.override << "END"
 [org.gnome.shell]
@@ -997,11 +993,11 @@ tap-to-click=true
 click-method='default'
 
 [org.gnome.desktop.background]
-picture-uri='file:///usr/share/backgrounds/gnome/MassOS-Futuristic-Light.png'
-picture-uri-dark='file:///usr/share/backgrounds/gnome/MassOS-Futuristic-Dark.png'
+picture-uri='file:///usr/share/backgrounds/gnome/Orchanix-Gray-Middle.png'
+picture-uri-dark='file:///usr/share/backgrounds/gnome/Orchanix-Gray-Middle.png'
 
 [org.gnome.desktop.screensaver]
-picture-uri='file:///usr/share/gdm/gdm-background.png'
+picture-uri='file:///usr/share/backgrounds/gnome/Orchanix-Gray-nologo.png'
 
 [org.gnome.nautilus.icon-view]
 default-zoom-level='standard'
@@ -1010,7 +1006,7 @@ default-zoom-level='standard'
 show-delete-permanently=true
 
 [org.gnome.login-screen]
-logo='/usr/share/massos/massos-logo-sidetext.png'
+logo='/usr/share/orchanix/orchanix-logo-sidetext.png'
 
 [org.gnome.terminal.legacy]
 theme-variant='dark'
